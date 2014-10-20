@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+		<script src="https://hst-api.wialon.com/wsdk/script/wialon.js"></script>
+		<script src="js/script.js"></script>
+		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
+	</head>
+	<body>
+		<div id="map" class="map"></div>
+		<div id="overlay" class="overlay">
+			<div class="login-form leaflet-popup-content-wrapper">
+				<h2>Locator Live</h2>
+				<p>Username: <input type="text" id="username" value="Cebit"/></p>
+				<p>Password: <input type="password" id="password" value="cebit"/></p>
+				<p><input type="button" id="loginBtn" value="Login"/></p>
+			</div>
+		</div>
+		<script>
+			app.initialize();
+		</script>
+	</body>
+</html>
