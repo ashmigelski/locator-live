@@ -89,10 +89,12 @@ var app = (function () {
 		// !!! UNCOMENT IF YOU WANT TO SEE ALL UNITS
 		// map.fitBounds(bounds);
 
-		var markers = L.markerClusterGroup({ chunkedLoading: true, chunkProgress: updateProgressBar });
-		console.info('clustering: Start');
+		var markers = L.markerClusterGroup({
+			chunkedLoading: true,
+			//chunkProgress: updateProgressBar,
+			disableClusteringAtZoom: 17
+		});
 		markers.addLayers(markerList);
-
 		map.addLayer(markers);
 	}
 
@@ -187,6 +189,14 @@ var app = (function () {
 		L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 			attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 		}).addTo(map);
+	};
+
+	// public access
+	this.getUnitsData = function () {
+		return unitsData;
+	}
+	this.getMap = function () {
+		return map;
 	};
 
 	return self;
